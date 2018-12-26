@@ -1,9 +1,109 @@
-html, body {
-  height: 100%;
-  background: #F2F4F5;
+@font-face {
+  font-family: 'dockermanager';
+  src: url('../fonts/dockermanager.eot?xtw6ft');
+  src: url('../fonts/dockermanager.eot?xtw6ft#iefix')
+      format('embedded-opentype'),
+    url('../fonts/dockermanager.ttf?xtw6ft') format('truetype'),
+    url('../fonts/dockermanager.woff?xtw6ft') format('woff'),
+    url('../fonts/dockermanager.svg?xtw6ft#dockermanager') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.layout {}
+[class^='icon-'],
+[class*=' icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'dockermanager' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-overview:before {
+  content: '\e900';
+}
+.icon-images:before {
+  content: '\e901';
+}
+.icon-containers:before {
+  content: '\e902';
+}
+.icon-clean:before {
+  content: '\e903';
+}
+.icon-terminal:before {
+  content: '\e904';
+}
+.icon-setting:before {
+  content: '\e905';
+}
+.icon-search:before {
+  content: '\e906';
+}
+.icon-del:before {
+  content: '\e907';
+}
+.icon-start:before {
+  content: '\e908';
+}
+.icon-stop:before {
+  content: '\e909';
+}
+.icon-layers:before {
+  content: '\e90a';
+}
+.icon-share:before {
+  content: '\e90b';
+}
+.icon-tag:before {
+  content: '\e90c';
+}
+.icon-git:before {
+  content: '\e90d';
+}
+.icon-add:before {
+  content: '\e145';
+}
+.icon-check:before {
+  content: '\e5ca';
+}
+.icon-close:before {
+  content: '\e5cd';
+}
+.icon-reload:before {
+  content: '\e86a';
+}
+.icon-alert:before {
+  content: '\e90e';
+}
+.icon-error:before {
+  content: '\e888';
+}
+.icon-cancel:before {
+  content: '\e611';
+}
+.icon-time:before {
+  content: '\e8b5';
+}
+.icon-add_circel:before {
+  content: '\e3ba';
+}
+.icon-remove_circle:before {
+  content: '\e15d';
+}
+
+html,
+body {
+  height: 100%;
+  background: #f2f4f5;
+  color: #6a7a8c;
+}
 
 .layout .sidebar {
   position: fixed;
@@ -11,7 +111,40 @@ html, body {
   width: 100px;
   background: #233242;
 }
-
 .layout .content {
   margin-left: 100px;
+}
+
+.sidebar .navs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sidebar .navs li {
+  margin-bottom: 20px;
+}
+.sidebar .navs li:last-child {
+  margin-bottom: 0;
+}
+.sidebar .navs li a {
+  display: block;
+  height: 53px;
+  padding-top: 12px;
+  color: #8f979f;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: none;
+}
+.sidebar .navs li a.active {
+  background: #147efb;
+  color: #fff;
+}
+.sidebar .navs li a:hover {
+  color: #fff;
+}
+.sidebar .navs li a .icon {
+  font-size: 24px;
+  display: block;
+  width: 24px;
+  margin: 0 auto 4px auto;
 }
