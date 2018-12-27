@@ -184,11 +184,20 @@ h6 {
     0 6px 20px 0 rgba(0, 0, 0, 0.02);
 }
 
-/* Overview */
-
-.overview {
+.unselectble {
   -webkit-user-select: none;
 }
+
+.undragble {
+  -webkit-app-region: no-drag;
+}
+
+.dragble {
+  -webkit-app-region: drag;
+}
+
+/* Overview */
+
 .overview-items {
   background: #fff;
   padding: 30px 50px;

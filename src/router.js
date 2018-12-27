@@ -22,14 +22,6 @@ export default new Router({
       }
     },
     {
-      name: 'Projects',
-      path: '/projects',
-      component: () => import('./views/Projects.vue'),
-      meta: {
-        title: '项目'
-      }
-    },
-    {
       name: 'Images',
       path: '/images',
       component: () => import('./views/Images.vue'),

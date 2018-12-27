@@ -1,65 +1,16 @@
 <template>
-  <div class="overview">
+  <div class="overview unselectble">
     <h1 class="page-title">{{ $route.meta.title }}</h1>
 
     <div class="overview-items shadow">
-      <div class="overview-item">
-        <h3 class="overview-item-title">
-          <icon name="images"/>镜像
-        </h3>
-        <div class="overview-item-data">
-          <div class="overview-item-group">
-            <div class="overview-item-name">全部镜像</div>
-            <div class="overview-item-value">10</div>
-          </div>
-          <div class="overview-item-group">
-            <div class="overview-item-name">异常镜像</div>
-            <div class="overview-item-value">2</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="overview-item">
-        <h3 class="overview-item-title">
-          <icon name="containers"/>容器
-        </h3>
-        <div class="overview-item-data">
-          <div class="overview-item-group">
-            <div class="overview-item-name">全部容器</div>
-            <div class="overview-item-value">10</div>
-          </div>
-          <div class="overview-item-group">
-            <div class="overview-item-name">异常容器</div>
-            <div class="overview-item-value">2</div>
-          </div>
-        </div>
-      </div>
+      <data-item v-for="item in data" v-bind="item" v-bind:key="item.title"/>
     </div>
 
     <div class="shortcuts">
       <h3 class="title">快捷操作</h3>
-      <ul>
-        <li>
-          <a href class="shortcut">
-            <div class="image">
-              <icon name="clean"/>
-            </div>
-            <div class="summary">
-              <h4>无效清理容器</h4>
-              <small>找到并清理构造失败或启动失败的容器</small>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href class="shortcut">
-            <div class="image">
-              <icon name="layers"/>
-            </div>
-            <div class="summary">
-              <h4>清理无效镜像</h4>
-              <small>找到并清理构造失败的镜像</small>
-            </div>
-          </a>
+      <ul class="shadow">
+        <li v-for="item in shortcuts" v-bind:key="item.name">
+          <shortcut v-bind="item"/>
         </li>
       </ul>
     </div>
@@ -68,8 +19,30 @@
 
 <script>
 import Icon from '../components/Icon'
+import Shortcut from '../components/Shortcut'
+import DataItem from '../components/overview/Item'
 
 export default {
-  components: { Icon }
+  components: { DataItem, Icon, Shortcut },
+  data: () => {
+    return {
+      data: [
+        {
+          title: '镜像',
+          icon: 'images',
+          data: [{ name: '全部镜像', value: 10 }, { name: '异常', value: 2 }]
+        },
+        {
+          title: '容器',
+          icon: 'containers',
+          data: [{ name: '全部容器', value: 10 }, { name: '异常', value: 2 }]
+        }
+      ],
+      shortcuts: [
+        { name: '无效清理容器', desc: '找到并清理构造失败或启动失败的容器', icon: 'clean', link: '/containers' },
+        { name: '清理无效镜像', desc: '找到并清理构造失败的镜像', icon: 'layers', link: '/images' }
+      ]
+    }
+  }
 }
 </script>
