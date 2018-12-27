@@ -8,14 +8,14 @@
 </template>
 
 <script>
-  import Icon from '../Icon'
+import Icon from '../Icon'
 
-  export default {
-    props: {
-      name: String,
-      link: String,
-      icon: String
-    },
-    components: { Icon }
-  }
+export default {
+  props: {
+    name: String,
+    link: String,
+    icon: String
+  },
+  components: { Icon }
+}
 </script>

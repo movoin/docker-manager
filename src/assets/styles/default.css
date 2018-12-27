@@ -103,22 +103,42 @@ body {
   height: 100%;
   background: #f2f4f5;
   color: #6a7a8c;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+    Microsoft YaHei, SimSun, sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
 }
 
-.layout .sidebar {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  -webkit-user-select: none;
+}
+
+.sidebar {
   position: fixed;
   height: 100%;
   width: 100px;
   background: #233242;
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
 }
-.layout .content {
+.content {
+  position: fixed;
+  width: 700px;
+  height: 625px;
   margin-left: 100px;
+  padding: 0 50px;
 }
 
 .sidebar .navs {
   list-style: none;
   margin: 0;
   padding: 0;
+  -webkit-app-region: no-drag;
 }
 .sidebar .navs li {
   margin-bottom: 20px;
@@ -135,16 +155,123 @@ body {
   text-align: center;
   text-decoration: none;
 }
-.sidebar .navs li a.active {
+.sidebar .navs li a.active,
+.sidebar .navs li a.active:hover {
   background: #147efb;
   color: #fff;
 }
 .sidebar .navs li a:hover {
-  color: #fff;
+  color: #147efb;
 }
 .sidebar .navs li a .icon {
   font-size: 24px;
   display: block;
   width: 24px;
   margin: 0 auto 4px auto;
+}
+
+/* Commons */
+
+.page-title {
+  font-size: 21px;
+  color: #6a7a8c;
+  margin: 50px 0 20px 0;
+  font-weight: 400;
+}
+
+.shadow {
+  box-shadow: 0 -3px 31px 0 rgba(0, 0, 0, 0.05),
+    0 6px 20px 0 rgba(0, 0, 0, 0.02);
+}
+
+/* Overview */
+
+.overview {
+  -webkit-user-select: none;
+}
+.overview-items {
+  background: #fff;
+  padding: 30px 50px;
+}
+.overview-items .overview-item {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e9e9e9;
+}
+.overview-items .overview-item:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+.overview-items .overview-item-title {
+  color: #6a7a8c;
+  margin: 0 0 35px 0;
+}
+.overview-items .overview-item-title .icon {
+  color: #8f979f;
+  margin-right: 10px;
+}
+.overview-items .overview-item-data {
+  display: flex;
+  color: #bbc0c9;
+}
+.overview-items .overview-item-data .overview-item-group {
+  display: flex;
+  width: 50%;
+}
+.overview-items .overview-item-data .overview-item-group .overview-item-name {
+  width: 50%;
+}
+.overview-items .overview-item-data .overview-item-group .overview-item-value {
+  width: 50%;
+  text-align: center;
+}
+
+/* Shortcuts */
+
+.shortcuts {
+  margin-top: 30px;
+}
+.shortcuts .title {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+}
+.shortcuts ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 20px 0 0 0;
+  padding: 20px;
+  background: #fff;
+}
+.shortcuts ul li {
+  width: 45%;
+}
+.shortcuts .shortcut {
+  display: flex;
+  text-decoration: none;
+}
+.shortcuts .shortcut .image {
+  font-size: 30px;
+  width: 64px;
+  height: 64px;
+  line-height: 68px;
+  text-align: center;
+  color: #fff;
+  border-radius: 50%;
+  background: #147efb;
+  display: inline-block;
+}
+.shortcuts .shortcut .summary {
+  color: #233242;
+  margin-left: 15px;
+}
+.shortcuts .shortcut .summary h4 {
+  margin: 4px 0;
+  font-weight: 400;
+}
+.shortcuts .shortcut .summary small {
+  font-weight: 400;
+  color: #6a7a8c;
 }

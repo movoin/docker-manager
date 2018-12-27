@@ -1,7 +1,9 @@
 {
   "name": "docker-manager",
   "version": "0.1.0",
+  "description": "macos 的 docker 管理工具，主要解决自己频繁 docker build 产生很多 container 和 none images 的清理问题",
   "private": true,
+  "author": "Allen Luo <movoin@gmail.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

@@ -1,9 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-// Views
-import ViewOverview from '@/views/Overview'
-
 Vue.use(Router)
 
 export default new Router({

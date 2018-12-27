@@ -5,13 +5,12 @@
 </template>
 
 <script>
-  import NavItem from './NavItem'
+import NavItem from './NavItem'
 
-  export default {
-    props: {
-      items: Array
-    },
-    components: { NavItem }
-  }
+export default {
+  props: {
+    items: Array
+  },
+  components: { NavItem }
+}
 </script>
-

@@ -9,14 +9,14 @@
 </template>
 
 <script>
-  import Sidebar from './components/layout/Sidebar'
+import Sidebar from './components/layout/Sidebar'
 
-  export default {
-    components: { Sidebar }
-  }
+export default {
+  components: { Sidebar }
+}
 </script>
 
 <style>
-  @import './assets/styles/normalize.css';
-  @import './assets/styles/default.css';
+@import "./assets/styles/normalize.css";
+@import "./assets/styles/default.css";
 </style>
