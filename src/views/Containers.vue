@@ -1,6 +1,9 @@
 <template>
   <div class="images unselectble">
-    <h1 class="page-title">{{ $route.meta.title }}</h1>
+    <h1 class="page-title">
+      <icon name="containers"/>
+      {{ $route.meta.title }}
+    </h1>
 
     <div class="table shadow">
       <table>
@@ -29,12 +32,18 @@
         <tfoot>
           <tr>
             <td colspan="2">
-              <button class="btn">删除</button>
+              <button class="btn">
+                <icon name="del"/>&nbsp;删除
+              </button>
             </td>
             <td colspan="4">
               <div class="pagination">
-                <button class="prev">上一页</button>
-                <button class="next" disabled>下一页</button>
+                <button class="prev">
+                  <icon name="left"/>
+                </button>
+                <button class="next" disabled>
+                  <icon name="right"/>
+                </button>
               </div>
             </td>
           </tr>
@@ -45,7 +54,10 @@
 </template>
 
 <script>
+import Icon from '../components/Icon'
+
 export default {
+  components: { Icon },
   methods: {
     selectedAll: function () {
       this.selectedItems = []

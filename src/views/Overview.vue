@@ -1,6 +1,9 @@
 <template>
   <div class="overview unselectble">
-    <h1 class="page-title">{{ $route.meta.title }}</h1>
+    <h1 class="page-title">
+      <icon name="overview"/>
+      {{ $route.meta.title }}
+    </h1>
 
     <div class="overview-items shadow">
       <data-item v-for="item in data" v-bind="item" v-bind:key="item.title"/>
@@ -18,13 +21,26 @@
 </template>
 
 <script>
+import Icon from '../components/Icon'
 import Shortcut from '../components/Shortcut'
 import DataItem from '../components/overview/Item'
 
+import Docker from '../utils/DockerClient'
+
 export default {
-  components: { DataItem, Shortcut },
+  components: { Icon, DataItem, Shortcut },
+  created () {
+    Docker().info((err, info) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log(info)
+      }
+    })
+  },
   data: () => {
     return {
+      client: null,
       data: [
         {
           title: '镜像',

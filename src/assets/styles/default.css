@@ -97,6 +97,24 @@
 .icon-remove_circle:before {
   content: '\e15d';
 }
+.icon-arrow-left:before {
+  content: '\e90f';
+}
+.icon-arrow-right:before {
+  content: '\e910';
+}
+.icon-arrow-left-circle:before {
+  content: '\e911';
+}
+.icon-arrow-right-circle:before {
+  content: '\e912';
+}
+.icon-left:before {
+  content: '\e913';
+}
+.icon-right:before {
+  content: '\e914';
+}
 
 html,
 body {
@@ -177,6 +195,10 @@ h6 {
   color: #6a7a8c;
   margin: 50px 0 20px 0;
   font-weight: 400;
+}
+.page-title .icon {
+  color: #147efb;
+  margin-right: 6px;
 }
 
 .shadow {
