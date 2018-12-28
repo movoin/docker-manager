@@ -18,12 +18,11 @@
 </template>
 
 <script>
-import Icon from '../components/Icon'
 import Shortcut from '../components/Shortcut'
 import DataItem from '../components/overview/Item'
 
 export default {
-  components: { DataItem, Icon, Shortcut },
+  components: { DataItem, Shortcut },
   data: () => {
     return {
       data: [
